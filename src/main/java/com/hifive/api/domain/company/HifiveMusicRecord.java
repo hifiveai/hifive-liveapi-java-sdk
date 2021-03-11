@@ -11,8 +11,6 @@ import java.util.List;
  *
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2020-10-23 18:10:34
  **/
 public class HifiveMusicRecord extends HifiveObject {
 

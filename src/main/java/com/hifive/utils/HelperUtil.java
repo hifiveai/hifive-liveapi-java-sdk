@@ -23,13 +23,19 @@ public class HelperUtil {
     /**
      * md5加密
      *
-     * @param input
-     * @return
+     * @param input 加密入参
+     * @return 返回加密结果
      */
     public static String md5Hex(byte[] input) {
         return DigestUtils.md5Hex(input);
     }
 
+    /**
+     * hmac加密
+     * @param input 加密入参
+     * @param key 加密key
+     * @return 返回结果
+     */
     public static byte[] hmacSha1(String input, String key) {
         if (Objects.isNull(key)) {
             return new byte[0];
@@ -55,7 +61,7 @@ public class HelperUtil {
      * @param requestHolder 所有字符型的TOP请求参数
      * @param secret        签名密钥
      * @return 签名
-     * @throws IOException
+     * @throws IOException 返回异常
      */
     public static String signTopRequestNew(RequestParametersHolder requestHolder, String secret) throws IOException {
         // 第一步：检查参数是否已经排序
@@ -89,8 +95,8 @@ public class HelperUtil {
     /**
      * base64编码
      *
-     * @param input
-     * @return
+     * @param input base64编码入参
+     * @return 返回结果
      */
     public static String base64(String input) {
         Base64.getEncoder().encodeToString(input.getBytes(StandardCharsets.UTF_8));

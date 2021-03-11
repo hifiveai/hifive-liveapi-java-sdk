@@ -36,6 +36,7 @@ public abstract class HFBaseRequest<T extends HifiveResponse> implements HifiveR
         this.nonce = nonce;
     }
 
+    @Override
     public String getMethod() {
         return method;
     }
@@ -48,22 +49,27 @@ public abstract class HFBaseRequest<T extends HifiveResponse> implements HifiveR
         this.authorization = authorization;
     }
 
+    @Override
     public String getClientId() {
         return clientId;
     }
 
+    @Override
     public String getVersion() {
         return version;
     }
 
+    @Override
     public String getNonce() {
         return StringUtils.isEmpty(nonce) ? RandomStringUtils.randomAlphabetic(32) : nonce;
     }
 
+    @Override
     public String getAuthorization() {
         return authorization;
     }
 
+    @Override
     public String getToken() {
         return token;
     }

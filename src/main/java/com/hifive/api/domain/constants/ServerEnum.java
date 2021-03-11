@@ -1,8 +1,5 @@
 package com.hifive.api.domain.constants;
 
-import lombok.Getter;
-
-@Getter
 public enum ServerEnum {
 
     REPEAT_REQUEST(10412, "请不要重复请求接口"),
@@ -60,4 +57,11 @@ public enum ServerEnum {
         this.msg = msg;
     }
 
+    public int getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
 }

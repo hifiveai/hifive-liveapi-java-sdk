@@ -20,12 +20,14 @@ public class ObjectJsonParser<T extends HifiveResponse> implements HifiveParser<
         this.clazz = clazz;
     }
 
+    @Override
     public T parse(String rsp) throws ApiException {
         Converter converter = new JsonConverter();
         System.out.println(rsp);
         return converter.toResponse(rsp, clazz);
     }
 
+    @Override
     public Class<T> getResponseClass() {
         return clazz;
     }

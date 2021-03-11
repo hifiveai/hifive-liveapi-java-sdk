@@ -19,7 +19,6 @@ import java.util.Map;
  * </p>
  *
  * @author yong.huang
- * @Date: 2020/08/03$ $
  */
 public class OpenApiClient {
 
@@ -145,7 +144,7 @@ public class OpenApiClient {
      * </p>
      *
      * @author yong.huang
-     * @Date:
+     * @return 返回结果
      **/
     public CreateApiResponse sendRequst() {
         String headerBase64 = SignUtil.headersBase64(method, headers);

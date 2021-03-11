@@ -12,21 +12,21 @@ public interface HFClient {
     /**
      * 执行TOP公开API请求。
      *
-     * @param <T>
+     * @param <T> 请求入参
      * @param request 具体的TOP请求
-     * @return
-     * @throws ApiException
+     * @return 返回结果
+     * @throws ApiException 请求异常
      */
-    public <T extends HifiveResponse> T execute(HifiveRequest<T> request) throws ApiException;
+    <T extends HifiveResponse> T execute(HifiveRequest<T> request) throws ApiException;
 
     /**
      * 执行TOP隐私API请求。
      *
-     * @param <T>
+     * @param <T> 请求入参
      * @param request 具体的TOP请求
      * @param session 用户会话授权码
-     * @return
-     * @throws ApiException
+     * @return 返回结果
+     * @throws ApiException 请求异常
      */
-    public <T extends HifiveResponse> T execute(HifiveRequest<T> request, String session) throws ApiException;
+    <T extends HifiveResponse> T execute(HifiveRequest<T> request, String session) throws ApiException;
 }

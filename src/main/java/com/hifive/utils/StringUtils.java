@@ -342,9 +342,7 @@ public class StringUtils {
         }
     }
 
-    /**
-     * 检查对象是否为数字型字符串,包含负数开头的。
-     */
+
     public static boolean isNumeric(Object obj) {
         if (obj == null) {
             return false;
@@ -457,13 +455,6 @@ public class StringUtils {
 
     }
 
-    /**
-     * @deprecated
-     */
-    @Deprecated
-    public static String toLanguageTag(Locale locale) {
-        return locale.getLanguage() + (hasText(locale.getCountry()) ? "-" + locale.getCountry() : "");
-    }
 
     public static TimeZone parseTimeZoneString(String timeZoneString) {
         TimeZone timeZone = TimeZone.getTimeZone(timeZoneString);

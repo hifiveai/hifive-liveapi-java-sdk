@@ -13,11 +13,14 @@ public interface HifiveParser<T extends HifiveResponse> {
      *
      * @param rsp 响应字符串
      * @return 领域对象
+     * @throws ApiException 返回异常
      */
     public T parse(String rsp) throws ApiException;
 
     /**
      * 获取响应类类型。
+     * @throws ApiException 返回异常
+     * @return 领域对象
      */
     public Class<T> getResponseClass() throws ApiException;
 

@@ -123,36 +123,6 @@ public class ReflectionUtils {
         }
     }
 
-    /**
-     * @deprecated
-     */
-    @Deprecated
-
-    public static Object invokeJdbcMethod(Method method, Object target) throws SQLException {
-        return invokeJdbcMethod(method, target);
-    }
-
-    /**
-     * @deprecated
-     */
-    @Deprecated
-
-    public static Object invokeJdbcMethod(Method method, Object target, Object... args) throws SQLException {
-        try {
-            return method.invoke(target, args);
-        } catch (IllegalAccessException var4) {
-            handleReflectionException(var4);
-        } catch (InvocationTargetException var5) {
-            if (var5.getTargetException() instanceof SQLException) {
-                throw (SQLException) var5.getTargetException();
-            }
-
-            handleInvocationTargetException(var5);
-        }
-
-        throw new IllegalStateException("Should never get here");
-    }
-
     public static boolean declaresException(Method method, Class<?> exceptionType) {
         Class<?>[] declaredExceptions = method.getExceptionTypes();
         Class[] var3 = declaredExceptions;

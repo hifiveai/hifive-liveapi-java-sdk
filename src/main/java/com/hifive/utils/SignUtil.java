@@ -14,15 +14,10 @@ import java.util.Map;
  * </p>
  *
  * @author yong.huang
- * @Date:
  **/
 public class SignUtil {
 
 
-    /** -------------------------- 辅助函数  ----------------------------------------------- **/
-    /**
-     * 封装协议头
-     **/
     public static String headersBase64(String method, Map<String, String> headers) {
         StringBuffer buffer = new StringBuffer();
         buffer.append(method).append(" ");

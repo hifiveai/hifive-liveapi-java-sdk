@@ -49,32 +49,53 @@ public interface HifiveRequest<T extends HifiveResponse> {
 
     /**
      * 客户端参数检查，减少服务端无效调用
+     * @throws ApiRuleException 返回异常
      */
     public void check() throws ApiRuleException;
 
 
     /**
      * 添加自定义请求参数
+     * @param key 参数key
+     * @param value 参数值
      */
     public void putOtherTextParam(String key, String value);
 
     /**
      * 获取方法
+     * @return 返回结果
      */
     public String getMethod();
 
     /**
      * clientId
+     * @return 返回结果
      */
     public String getClientId();
 
 
+    /**
+     * version
+     * @return 返回结果
+     */
     public String getVersion();
 
+    /**
+     * nonce
+     * @return 返回结果
+     */
     public String getNonce();
 
+    /**
+     * authorization
+     * @return 返回结果
+     */
     public String getAuthorization();
 
+    /**
+     * token
+     * @return 返回结果
+     */
     public String getToken();
 
 

@@ -8,8 +8,6 @@ import com.hifive.api.internal.mapping.ApiField;
  *
  * @author meiyang
  * @version 1.0
- * @review meiyang
- * @date 2020-10-26 11:24:56
  **/
 public class HifiveSubVersion extends HifiveObject {
 

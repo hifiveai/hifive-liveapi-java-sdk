@@ -34,7 +34,6 @@ import java.util.*;
  * HttpClientUtils
  *
  * @author Jerry.X.He
- * @date 2018/4/12 13:50
  */
 public class HttpClientUtils {
 
@@ -91,7 +90,6 @@ public class HttpClientUtils {
      * @param respCharset respCharset
      * @return java.lang.String
      * @author Jerry.X.He
-     * @date 2018/4/8 14:19
      */
     public static String get(String url, Map<String, String> headers, Map<String, String> params, String respCharset) {
         LOGGER.info(" 发送 http-get 请求, url : " + url + ", headers : " + JSON.toJSONString(headers) + ", params : " + JSON.toJSONString(params));
@@ -156,7 +154,6 @@ public class HttpClientUtils {
      * @param respCharset respCharset
      * @return java.lang.String
      * @author Jerry.X.He
-     * @date 2018/4/8 14:19
      */
     public static String post(String url, Map<String, String> headers, Map<String, String> params, String reqCharset, String respCharset) {
         try {
@@ -231,7 +228,6 @@ public class HttpClientUtils {
      * @param respCharset respCharset
      * @return java.lang.String
      * @author Jerry.X.He
-     * @date 2018/4/8 14:19
      */
     public static String postByRequestBody(String url, Map<String, String> headers, String requestBody, String reqCharset, String respCharset) {
         try {
@@ -297,7 +293,6 @@ public class HttpClientUtils {
      * @param params params
      * @return java.lang.String
      * @author Jerry.X.He
-     * @date 2018/4/8 16:10
      */
     public static String encapQueryString(Map<String, String> params) {
         StringBuilder queryStrBuilder = new StringBuilder();
@@ -311,11 +306,12 @@ public class HttpClientUtils {
 
 
     /**
-     * @param url
-     * @param content
-     * @param toCharset
-     * @return
-     * @throws Exception
+     * @param url url入参
+     * @param content 内容入参
+     * @param logContent 内容入参
+     * @param toCharset 转码chart
+     * @return 返回结果
+     * @throws Exception 请求异常
      */
     public static String postXml(String url, String content, String logContent, String toCharset) throws Exception {
         String result = null;
@@ -397,7 +393,6 @@ public class HttpClientUtils {
      * @param e e
      * @return java.lang.String
      * @author Jerry.X.He
-     * @date 2018/4/18 9:11
      */
     public static String errorMsg(Exception e) {
         return e.getClass().getName() + " -> " + e.getMessage();

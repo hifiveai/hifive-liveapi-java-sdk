@@ -121,6 +121,10 @@ public class HttpKit {
 
     /**
      * Send GET request
+     * @param url 请求路径
+     * @param queryParas 请求入参
+     * @param headers 请求头
+     * @return 返回结果
      */
     public static String get(String url, Map<String, String> queryParas, Map<String, String> headers) {
         HttpURLConnection conn = null;
@@ -145,9 +149,7 @@ public class HttpKit {
         return get(url, null, null);
     }
 
-    /**
-     * Send POST request
-     */
+
     public static String post(String url, Map<String, String> queryParas, String data, Map<String, String> headers) {
         HttpURLConnection conn = null;
         try {
