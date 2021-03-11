@@ -12,11 +12,16 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) {
-        String url = "https://hifive-gateway-demo.hifiveai.com";
-        String appkey = "300a44d050c942eebeae8765a878b0ee";
-        String secret = "0e31fe11b31247fca8";
+//        String url = "https://hifive-gateway-demo.hifiveai.com";
+//        String appkey = "300a44d050c942eebeae8765a878b0ee";
+//        String secret = "0e31fe11b31247fca8";
+
+        String url = "https://hifive-gateway-test.hifiveai.com";
+        String appkey = "25861e5063284e38a40bc960070b34ab";
+        String secret = "7a4e2914d1b647b98a";
+
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        HifivePostCreateMember(client);
+//        HifivePostCreateMember(client);
 //        HifivePostBindMember(client);
 //        HifivePostUnBindMember(client);
 //        HifivePostCancelMember(client);
@@ -26,14 +31,13 @@ public class DefaultClientTest {
 //        HifiveGetCompanyChannelList(client);
 //        HifiveGetCompanySheetTagList(client);
 //        HifiveGetCompanySheetMusicList(client);
-//        HifiveGetCompanySheetMusicAll(client);
 //
 //        HifivePostMemberSheetList(client);
+//        HifiveAddMemberSheetMusic(client);
 //        HifivePostMemberSheetMusicList(client);
 //        HifivePostMemberSheetMusicALL(client);
 //        HifivePostMusicDetail(client);
 //        HifiveRemoveMemberSheetMusic(client);
-//        HifiveAddMemberSheetMusic(client);
 
 
 //        HifivePostReportMusicRecord(client);
@@ -98,7 +102,7 @@ public class DefaultClientTest {
         HFMemberCancelRequest request = new HFMemberCancelRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setVersion("V1.2.1");
-        request.setMemberId(request.getClientId());
+        request.setMemberId("hifivetest-meiyang");
         try {
             HFMemberCancelPostResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -126,7 +130,7 @@ public class DefaultClientTest {
         HFComanyChannelRequest request = new HFComanyChannelRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setVersion("V1.2.1");
-        request.setClientId("1740");
+        request.setClientId("hifivetest-meiyang");
         try {
             HFCompanyChannelGetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -172,9 +176,9 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setVersion("V1.2.1");
         request.setLanguage(0);
-        request.setSheetId(1947L);
+        request.setSheetId(2089L);
         request.setField(Arrays.asList("album", "musicTag", "artist"));
-        request.setPage(4);
+        request.setPage(1);
         request.setPageSize(100);
         request.setClientId("hifivetest-meiyang");
         try {
@@ -223,7 +227,7 @@ public class DefaultClientTest {
         request.setVersion("V1.2.1");
         request.setLanguage(0);
         request.setField(Arrays.asList("album", "musicTag", "artist"));
-        request.setSheetId(11567L);
+        request.setSheetId(155375L);
         request.setPage(1);
         request.setPageSize(20);
         request.setClientId("hifivetest-meiyang");
@@ -241,7 +245,7 @@ public class DefaultClientTest {
         request.setVersion("V1.2.1");
         request.setLanguage(0);
         request.setField(Arrays.asList("album", "musicTag", "artist"));
-        request.setSheetId(11567L);
+        request.setSheetId(155375L);
         request.setClientId("hifivetest-meiyang");
         try {
             HFMemberSheetMusicAllPostResponse response = client.execute(request);
@@ -257,11 +261,11 @@ public class DefaultClientTest {
         request.setVersion("V1.2.1");
         request.setLanguage(0);
         request.setField(Arrays.asList("musicTag", "album", "artist"));
-        request.setMusicId("5316CBABB62443");
+        request.setMusicId("1D65214D861");
         request.setPage(1);
         request.setMediaType(MediaTypeEnum.K.getValue());
         request.setPageSize(20);
-        request.setClientId("12345678");
+        request.setClientId("hifivetest-meiyang");
         try {
             HFMusicDetailPostResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -274,8 +278,8 @@ public class DefaultClientTest {
         HFSheetMusicAddRequest request = new HFSheetMusicAddRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setVersion("V1.2.1");
-        request.setSheetId(11567L);
-        request.setMusicId("CE61A56F2240");
+        request.setSheetId(155375L);
+        request.setMusicId("1D65214D861");
         request.setClientId("hifivetest-meiyang");
         try {
             HFSheetMusicAddPostResponse response = client.execute(request);
@@ -289,8 +293,8 @@ public class DefaultClientTest {
         HFSheetMusicRemoveRequest request = new HFSheetMusicRemoveRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setVersion("V1.2.1");
-        request.setSheetId(11567L);
-        request.setMusicId("01004159275442");
+        request.setSheetId(155375L);
+        request.setMusicId("1D65214D861");
         request.setClientId("hifivetest-meiyang");
         try {
             HFSheetMusicRemovePostResponse response = client.execute(request);
@@ -304,7 +308,7 @@ public class DefaultClientTest {
         HFMusicRecordReportRequest request = new HFMusicRecordReportRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setVersion("V1.2.1");
-        request.setRecordId(877L);
+        request.setRecordId(23269L);
         request.setMediaType(MediaTypeEnum.L.getValue());
         request.setDuration(100L);
         request.setClientId("hifivetest-meiyang");
@@ -334,7 +338,7 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setVersion("V1.2.1");
         request.setClientId("hifivetest-meiyang");
-        request.setKeyword("Follow");
+        request.setKeyword("Andy");
         request.setField(Arrays.asList("musicTag","album","artist"));
         try {
             HFMusicPostResponse response = client.execute(request);
